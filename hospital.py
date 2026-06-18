@@ -142,7 +142,7 @@ with st.form("triage_form"):
         gender = st.selectbox("Gender", options=("Female", "Male"))
     
     st.markdown("<br>", unsafe_allow_html = True)
-    submitted = st.fore_submit_button("recommend")
+    submitted = st.for_submit_button("recommend")
     
 if submitted:
     patient = pd.DataFrame([{
