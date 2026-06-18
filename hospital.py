@@ -129,7 +129,7 @@ with st.form("triage_form"):
     with ch3:
         asthma = st.checkbox("Asthma")
     
-    st.markdown("<br>")
+    st.markdown("<br>", unsafe_allow_html=True)
     with open("patient.html", "r", encoding="utf-8") as f:
         patient_age = f.read()
 
@@ -142,7 +142,7 @@ with st.form("triage_form"):
         gender = st.selectbox("Gender", options=("Female", "Male"))
     
     st.markdown("<br>", unsafe_allow_html = True)
-    submitted = st.for_submit_button("recommend")
+    submitted = st.form_submit_button("recommend")
     
 if submitted:
     patient = pd.DataFrame([{
