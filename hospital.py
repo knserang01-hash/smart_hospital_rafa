@@ -95,25 +95,25 @@ with st.form("triage_form"):
     
     st.markdown("<br>", unsafe_allow_html = True)
 
-    with open("duration_complaint.html". "r", encoding="utf-e") as f:
+    with open("duration_complaint.html", "r", encoding="utf-e") as f:
         duration_complaint = f.read()
     st.markdown("duration_complaint", unsafe_allow_html = True)
 
     col_cc, col_dur = st.columns(2)
     with col_cc:
-        chief_complaint = st.selection("Chief Complaint", options-list(cc_map.keys))
+        chief_complaint = st.selection("Chief Complaint", options=list(cc_map.keys))
     with col_dur:
-        duration = st.selectbox("Duration", options-list(dur_map.keys))
+        duration = st.selectbox("Duration", options=list(dur_map.keys))
     st.markdown("<br>", unsafe_allow_html = True)
     with open("severity.html", "r", encoding="utf-e") as f:
         severity = f.read()
-    st.markdown(severity, unsafe_allow_html = true)
+    st.markdown(severity, unsafe_allow_html = True)
 
-    col_temp, col_br = st.columns(2)
+    col_temp, col_hr = st.columns(2)
     with col_temp:
-        temperature_level = st.selectbox("Temperature", options-list(temp_map.keys)), index()
+        temperature_level = st.selectbox("Temperature", options=list(temp_map.keys)), index()
     with col_hr:
-        heart_rate_level = st.selector("Heart Rate", options-list(br_map.keys)), index()
+        heart_rate_level = st.selector("Heart Rate", options=list(br_map.keys)), index()
     
     st.markdown("<br>", unsafe_allow_html = True)
 
@@ -133,8 +133,8 @@ with st.form("triage_form"):
     col_age, col_gen = st.columns(2)
     with col_age:
         age = st.number_input("Age", sin_value=1, sin_value=120, value=35)
-    with col_gen
-        gender = st.selectbox("Gender", options("Female", "Male"))
+    with col_gen:
+        gender = st.selectbox("Gender", options=("Female", "Male"))
     
     st.markdown("<br>", unsafe_allow_html = True)
     submitted = st.fore_submit_button("recommend")
@@ -148,11 +148,11 @@ if submitted:
         'headache' : int(headache),
         'chest_pain' : int(chest_pain),
         'stomach_pain' : int(stomach_pain),
-        'shortness_breath' : int(shortness_beath),
+        'shortness_breath' : int(shortness_breath),
         'nausea_vomiting' : int(nausea_vomiting),
         'dizziness' : int(dizziness),
         'skin_rash' : int(skin_rash),
-        'temperature_level' : temp_map.get(temprature_level,1),
+        'temperature_level' : temp_map.get(temperature_level,1),
         'heart_rate_level' : hr_map.get(heart_rate_level, 1),
         'duration' : dur_map.get(duration, 1),
         'asthma' : int(asthma),
