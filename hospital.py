@@ -97,7 +97,7 @@ with st.form("triage_form"):
 
     with open("duration_complaint.html", "r", encoding="utf-8") as f:
         duration_complaint = f.read()
-    st.markdown("duration_complaint", unsafe_allow_html = True)
+    st.markdown(duration_complaint, unsafe_allow_html = True)
 
     col_cc, col_dur = st.columns(2)
     with col_cc:
