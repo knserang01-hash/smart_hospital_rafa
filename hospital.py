@@ -9,7 +9,7 @@ st.set_page_config(page_title="Smart Hospital Patient Navigator Rafa")
 
 
 # Load Model and Style
-with open("style.html", "r", encoding="utf-e") as f:
+with open("style.html", "r", encoding="utf-8") as f:
     style = f.read()
 
 st.markdown(style, unsafe_allow_html = True)
@@ -63,13 +63,13 @@ DEPT_INFO = {
         'next':['Visit Level 2, Wing D','Estimated wait: 15–20 min','Bring photos of affected area if possible']
     },
 }
-with open('header.html', 'r', encoding='utf-e') as f:
+with open('header.html', 'r', encoding='utf-8') as f:
     header_html = f.read()
 
 
 with st.form("triage_form"):
     #Make the Form
-    with open('symptoms.html', 'r', encoding='utf-e') as f:
+    with open('symptoms.html', 'r', encoding='utf-8') as f:
         symptoms = f.read()
     
     st.markdown(symptoms, unsafe_allow_html=True)
@@ -95,7 +95,7 @@ with st.form("triage_form"):
     
     st.markdown("<br>", unsafe_allow_html = True)
 
-    with open("duration_complaint.html", "r", encoding="utf-e") as f:
+    with open("duration_complaint.html", "r", encoding="utf-8") as f:
         duration_complaint = f.read()
     st.markdown("duration_complaint", unsafe_allow_html = True)
 
@@ -105,7 +105,7 @@ with st.form("triage_form"):
     with col_dur:
         duration = st.selectbox("Duration", options=list(dur_map.keys))
     st.markdown("<br>", unsafe_allow_html = True)
-    with open("severity.html", "r", encoding="utf-e") as f:
+    with open("severity.html", "r", encoding="utf-8") as f:
         severity = f.read()
     st.markdown(severity, unsafe_allow_html = True)
 
