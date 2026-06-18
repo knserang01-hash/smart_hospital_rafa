@@ -117,7 +117,7 @@ with st.form("triage_form"):
     
     st.markdown("<br>", unsafe_allow_html = True)
 
-    with open("history_html", "r", encoding = "utf-8") as f:
+    with open("history.html", "r", encoding = "utf-8") as f:
         history = f.read()
     st.markdown(history, unsafe_allow_html=True)
     
