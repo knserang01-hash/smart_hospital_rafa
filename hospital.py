@@ -122,7 +122,7 @@ with st.form("triage_form"):
     
     ch1, ch2, ch3, _ = st.columns(4)
     with ch1:
-        hypertension = st.checkbox("Hyper Blood Pressure")
+        hypertension = st.checkbox("High Blood Pressure")
     with ch2:
         heart_disease = st.checkbox("Heart Disease")
     with ch3:
@@ -132,7 +132,7 @@ with st.form("triage_form"):
 
     col_age, col_gen = st.columns(2)
     with col_age:
-        age = st.number_input("Age", sin_value=1, sin_value=120, value=35)
+        age = st.number_input("Age", min_value=1, max_value=120, value=35)
     with col_gen:
         gender = st.selectbox("Gender", options=("Female", "Male"))
     
